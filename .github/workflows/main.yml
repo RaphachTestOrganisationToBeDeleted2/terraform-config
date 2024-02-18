@@ -22,14 +22,14 @@ jobs:
         run: terraform init
 
       - name: terraform plan
-        run: terraform plan
+        run: terraform plan -var="github_token=${{ secrets.MY_PAT }}"
         
 
       - name: terraform validate
         run: terraform validate
 
       - name: terraform apply
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -var="github_token=${{ secrets.MY_PAT }}"
         
   
     
