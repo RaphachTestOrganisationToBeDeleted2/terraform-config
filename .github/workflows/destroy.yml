@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       TF_VAR_GITHUB_TOKEN: ${{ secrets.MY_FULL_PAT }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY}}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
     steps:
       - name: check repo
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
