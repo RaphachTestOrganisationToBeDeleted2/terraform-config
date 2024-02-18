@@ -3,3 +3,8 @@ variable "organization" {
   type        = string
   default     = "RaphachTestOrganisationToBeDeleted2"
 }
+
+variable "github_token" {
+  type = string
+  description = "GitHub API token"
+}
