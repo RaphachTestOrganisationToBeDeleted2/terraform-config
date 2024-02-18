@@ -7,7 +7,7 @@ jobs:
   terraform-destroy:
     runs-on: ubuntu-latest
     env: 
-      TF_VAR_GITHUB_TOKEN: ${{ secrets.MY_PAT }}
+      TF_VAR_GITHUB_TOKEN: ${{ secrets.MY_FULL_PAT }}
     steps:
       - name: check repo
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -16,7 +16,7 @@ jobs:
         run: terraform init
 
       - name: terraform destroy
-        run: terraform destroy -auto-approve -var="github_token=${{ secrets.MY_PAT }}"
+        run: terraform destroy -auto-approve -var="github_token=${{ secrets.MY_FULL_PAT }}"
         
   
   
