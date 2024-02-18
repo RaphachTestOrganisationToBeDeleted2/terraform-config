@@ -1,6 +1,3 @@
-
-
-
 module "github_repository" {
   source = "./modules/github-repo"
   repository = {

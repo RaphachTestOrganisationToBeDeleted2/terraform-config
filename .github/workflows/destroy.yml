@@ -1,4 +1,4 @@
-name: simple plan to destroy resources created via Terraform
+name: Terraform Destroy
 
 on: [workflow_dispatch]
 
