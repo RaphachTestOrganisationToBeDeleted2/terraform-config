@@ -1,0 +1,44 @@
+name: Fetch Microsoft Entra Groups and Users
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # This will run every day at midnight. Adjust the timing as needed.
+
+jobs:
+  fetchData:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '14'
+    - name: Install dependencies
+      run: npm install
+    - name: Fetch and Save Data
+      run: node ./fetcher/fetchGroupsAndUsers.mjs
+      env:
+        CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+        TENANT_ID: ${{ secrets.TENANT_ID }}
+        AUTHORITY: https://login.microsoftonline.com/${{ secrets.TENANT_ID }}
+        GRAPH_ENDPOINT: https://graph.microsoft.com/v1.0
+    - name: Commit and push file
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add fetcher/parsedGroupsAndUsers.json
+        if git diff --staged --quiet; then
+          echo "No changes to commit."
+        else 
+          git commit -m "Update parsedGroupsAndUsers.json"
+          git push origin
+        fi
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  
+
+      

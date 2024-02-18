@@ -1,0 +1,27 @@
+{
+    "value": [
+      {
+        "id": "group1",
+        "displayName": "Team Alpha",
+        "members": [
+          {
+            "id": "user1",
+            "displayName": "AnthonyHoyas",
+            "mail": "something@example.com"
+          }
+        ]
+      },
+      {
+        "id": "group2",
+        "displayName": "Team Beta",
+        "members": [
+          {
+            "id": "user1",
+            "displayName": "AnthonyHoyas",
+            "mail": "something@example.com"
+          }
+        ]
+      }
+    ]
+  }
+  
