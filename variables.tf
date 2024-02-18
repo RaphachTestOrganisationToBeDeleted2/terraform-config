@@ -3,8 +3,3 @@ variable "organization" {
   type        = string
   default     = "RaphachTestOrganisationToBeDeleted2"
 }
-
-variable "github_token" {
-  type = string
-  description = "Sets the GITHUB_TOKEN for terraform usage."
-}
