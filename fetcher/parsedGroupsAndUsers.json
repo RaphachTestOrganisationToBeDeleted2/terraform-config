@@ -1,0 +1,14 @@
+{
+  "Team Alpha": {
+    "user1": {
+      "name": "AnthonyHoyas",
+      "email": "something@example.com"
+    }
+  },
+  "Team Beta": {
+    "user1": {
+      "name": "AnthonyHoyas",
+      "email": "something@example.com"
+    }
+  }
+}
