@@ -39,7 +39,7 @@ jobs:
         fi
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        MODULE_PATH: "modules/github-teams/parsedGroupsAndUsers.json"
+        MODULE_PATH: "../../modules/github-teams/parsedGroupsAndUsers.json"
 
   
 
