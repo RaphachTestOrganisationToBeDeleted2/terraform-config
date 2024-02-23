@@ -19,6 +19,8 @@ jobs:
 
       - name: terraform destroy
         run: terraform destroy -auto-approve -var="github_token=${{ secrets.MY_FULL_PAT }}"
+        env:
+          TF_LOG: DEBUG
         
   
   
