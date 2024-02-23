@@ -12,7 +12,7 @@ terraform {
 
   backend "s3" {
     bucket = "terraform-rapha-test-bucket"
-    key = "mystate.tfstate"
+    key = "repositories_and_branches_state.tfstate"
     region = "eu-central-1"
   }
 }

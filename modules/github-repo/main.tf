@@ -39,46 +39,46 @@ resource "github_branch_default" "default_repository_branch" {
   depends_on = [github_repository.template_repo]
 }
 
-# resource "github_branch_protection" "branch_master_protection" {
-#   for_each = var.repository
-#   repository_id = github_repository.template_repo[each.key].name
-#   # also accepts repository name
-#   # repository_id  = github_repository.example.name
+resource "github_branch_protection" "branch_master_protection" {
+  for_each = var.repository
+  repository_id = github_repository.template_repo[each.key].name
+  # also accepts repository name
+  # repository_id  = github_repository.example.name
 
-#   pattern          = "master"
-#   enforce_admins   = true
-#   allows_deletions = false
-#   allows_force_pushes = false
-#   lock_branch = false
-#   require_signed_commits = true
-#   require_conversation_resolution = false
+  pattern          = "master"
+  enforce_admins   = true
+  allows_deletions = false
+  allows_force_pushes = false
+  lock_branch = false
+  require_signed_commits = true
+  require_conversation_resolution = false
 
-#   depends_on = [ github_branch_default.default_repository_branch ]
+  depends_on = [ github_branch_default.default_repository_branch ]
   
 
 
-# #   require_status_checks {
-# #   }
-
-  
-
-#   required_pull_request_reviews {
-#     dismiss_stale_reviews  = false
-#     restrict_dismissals    = true
-#     require_code_owner_reviews = true
-#     required_approving_review_count = 1
-#     require_last_push_approval = false
+#   require_status_checks {
 #   }
 
-# #   restrict_pushes {
-    
-# #   }
+  
 
-#   force_push_bypassers = [
-    
-#   ]
+  required_pull_request_reviews {
+    dismiss_stale_reviews  = false
+    restrict_dismissals    = true
+    require_code_owner_reviews = true
+    required_approving_review_count = 1
+    require_last_push_approval = false
+  }
 
-# }
+#   restrict_pushes {
+    
+#   }
+
+  force_push_bypassers = [
+    
+  ]
+
+}
 
 
 
