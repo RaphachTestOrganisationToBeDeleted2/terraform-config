@@ -56,7 +56,7 @@ import {fileURLToPath} from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-async function parseMockData() {
+async function parseMockData(outputDirectory) {
     try {
         // Load the mock data from the file
         const mockDataPath = join(__dirname, 'mockGroupsAndUsers.json');
@@ -73,9 +73,9 @@ async function parseMockData() {
 
         // The resulting structure is ready for your Terraform resource
         console.log(teams);
-        const outputPath = join(__dirname, 'parsedGroupsAndUsers.json');
-        if(!existsSync(__dirname)) {
-            mkdirSync(__dirname, {recursive: true});
+        const outputPath = join(outputDirectory, 'parsedGroupsAndUsers.json');
+        if(!existsSync(outputDirectory)) {
+            mkdirSync(outputDirectory, {recursive: true});
         }
         writeFileSync(outputPath, JSON.stringify(teams, null, 2));
     } catch (error) {
@@ -83,5 +83,7 @@ async function parseMockData() {
     }
 }
 
-parseMockData();
+const outputDirectory = process.env.OUTPUT_DIR || __dirname;
+
+parseMockData(outputDirectory);
 

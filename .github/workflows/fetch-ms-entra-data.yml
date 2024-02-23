@@ -25,6 +25,7 @@ jobs:
         TENANT_ID: ${{ secrets.TENANT_ID }}
         AUTHORITY: https://login.microsoftonline.com/${{ secrets.TENANT_ID }}
         GRAPH_ENDPOINT: https://graph.microsoft.com/v1.0
+        OUTPUT_DIR: ../../modules/github-teams
     - name: Commit and push file
       run: |
         git config user.name github-actions
