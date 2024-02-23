@@ -78,6 +78,7 @@ async function parseMockData(outputDirectory) {
             mkdirSync(outputDirectory, {recursive: true});
         }
         writeFileSync(outputPath, JSON.stringify(teams, null, 2));
+        console.log(outputDirectory, outputPath);
     } catch (error) {
         console.error('Error parsing mock data:', error);
     }
