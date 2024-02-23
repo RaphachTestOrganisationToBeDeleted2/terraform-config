@@ -25,7 +25,7 @@ jobs:
         TENANT_ID: ${{ secrets.TENANT_ID }}
         AUTHORITY: https://login.microsoftonline.com/${{ secrets.TENANT_ID }}
         GRAPH_ENDPOINT: https://graph.microsoft.com/v1.0
-        OUTPUT_DIR: ./modules/github-teams
+        OUTPUT_DIR: ./organizations/RaphachTestOrganisationToBeDeleted2/teams
     - name: Commit and push file
       run: |
         git config user.name github-actions
@@ -39,7 +39,7 @@ jobs:
         fi
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        MODULE_PATH: "./modules/github-teams/parsedGroupsAndUsers.json"
+        MODULE_PATH: "./organizations/RaphachTestOrganisationToBeDeleted2/teams/parsedGroupsAndUsers.json"
 
   
 
