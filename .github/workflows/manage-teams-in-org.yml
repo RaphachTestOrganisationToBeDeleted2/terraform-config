@@ -2,10 +2,7 @@ name: Terraform Populate Teams and Users in an Org
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Fetch Microsoft Entra Groups and Users"]
-    types:
-      - completed
+  
 
 jobs:
   terraform:
