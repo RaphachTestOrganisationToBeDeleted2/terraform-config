@@ -16,7 +16,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
     defaults:
       run:
-        working-directory: RaphachTestOrganisationToBeDeleted2/teams
+        working-directory: organizations/RaphachTestOrganisationToBeDeleted2/teams
     steps:
       - name: check repo
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
