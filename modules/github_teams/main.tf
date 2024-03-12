@@ -25,3 +25,4 @@ resource "github_team_membership" "team_membership" {
     username = each.value.user_name
     role = "member" // (Optional) The role of the user within the team. Must be one of member or maintainer. Defaults to member
 }
+

@@ -6,3 +6,7 @@ provider "github" {
 provider "aws" {
   region = "eu-central-1"
 }
+
+provider "azuread" {
+  
+}
