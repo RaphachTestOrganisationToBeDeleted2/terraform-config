@@ -1,5 +1,5 @@
 module "github_repository" {
-  source = "../../../modules/github-repo"
+  source = "../../../modules/github_repo"
   repository = {
     repo1 = {
       name        = "first-repo"

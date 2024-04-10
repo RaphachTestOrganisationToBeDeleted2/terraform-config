@@ -4,7 +4,7 @@ variable "organization" {
   default     = "RaphachTestOrganisationToBeDeleted2"
 }
 
-variable "github_token" {
-  type = string
-  description = "GitHub API token"
-}
+# variable "github_token" {
+#   type = string
+#   description = "GitHub API token"
+# }
